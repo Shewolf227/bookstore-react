@@ -1,6 +1,7 @@
 import './App.css';
 import { Routes, Route, Link } from 'react-router-dom';
 import BooksView from './components/BooksView';
+import CheckStatus from './components/Categories';
 
 function App() {
   const books = [
@@ -37,6 +38,7 @@ function App() {
       </header>
       <Routes>
         <Route path="/" element={<BooksView books={books} />} />
+        <Route path="/categories" element={<CheckStatus />} />
       </Routes>
     </div>
   );
