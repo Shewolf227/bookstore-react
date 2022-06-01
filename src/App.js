@@ -1,23 +1,43 @@
-import logo from './logo.svg';
 import './App.css';
+import { Routes, Route, Link } from 'react-router-dom';
+import BooksView from './components/BooksView';
 
 function App() {
+  const books = [
+    {
+      Title: 'Book 1',
+      Author: 'Alan Turing',
+    },
+    {
+      Title: 'Book 2',
+      Author: 'Alan Turing',
+    },
+    {
+      Title: 'Book 3',
+      Author: 'Alan Turing',
+    },
+    {
+      Title: 'Book 4',
+      Author: 'Alan Turing',
+    },
+    {
+      Title: 'Book 5',
+      Author: 'Alan Turing',
+    },
+  ];
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>BookStore</h1>
+        <nav className="App-navigation">
+          <Link to="/">Books</Link>
+          <Link to="/categories">Categories</Link>
+        </nav>
       </header>
+      <Routes>
+        <Route path="/" element={<BooksView books={books} />} />
+      </Routes>
     </div>
   );
 }
